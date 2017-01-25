@@ -1,0 +1,17 @@
+header {
+    display: none;
+}
+
+footer{
+    display: none;
+}
+
+#inventory{
+    display: none;
+}
+
+body{
+    width: 100%;
+    background-color: white;
+    
+}

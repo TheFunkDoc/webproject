@@ -1,0 +1,442 @@
+/* HEADER ANIMATIONS*/
+
+@keyframes dropHeader {
+   from {
+    
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes lettersHead{
+    0% {
+        font-weight:100;
+        font-size: 1.5625em;
+        padding: 0 10% 0 10%;
+        
+    }
+    49% {
+        font-weight:100;
+        font-size: 1.5625em;
+        padding: 0 10% 0 10%;
+    }
+    50% {
+        font-weight: 800;
+        font-size: 1.6875em;
+        padding: 0 9.6% 0 9.6%;
+    }
+    99% { 
+        font-weight: 800;
+        font-size: 1.6875em;
+        padding: 0 9.6% 0 9.6%;
+    }
+}
+
+/*BODY ANYMATIONS*/
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.01, 1.02, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes letters{
+    0% {
+        font-weight:100;
+        font-size: 2.5em;
+        
+    }
+    49% {
+        font-weight:100;
+        font-size: 2.5em;
+    }
+    50% {
+        font-weight: 800;
+        font-size: 2.625em;
+    }
+    99% { 
+        font-weight: 800;
+        font-size: 2.625em;
+    }
+}
+@keyframes lettersButtons{
+    0% {
+        font-weight:100;
+        font-size: 3em;
+        
+    }
+    49% {
+        font-weight:100;
+        font-size: 3em;
+    }
+    50% {
+        font-weight: 800;
+        font-size: 3.2em;
+    }
+    99% { 
+        font-weight: 800;
+        font-size: 3.2em;
+    }
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/*-----------------------------------------------------------------------*/
+/*GENERAL styling*/
+
+html{
+    background-color: black;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 5;
+}
+
+body{
+    margin: 0;
+    padding:0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.wrap{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+    padding-right: 20px;
+    
+}
+
+.radioButton{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slide{
+    width: 100%;
+    margin-top: 6%;
+    position: absolute;
+    min-height: 94%;
+    left: 100%;
+    z-index: 10;
+    transition: left 0 .9s;
+}
+
+.slide a{
+    text-decoration: none;
+    color: wheat;
+    
+}
+
+
+
+/*-----------------------------------------------------------------------*/
+/*SLIDING styling*/
+
+
+input[type=radio]:checked + .slide{
+    left: 0;
+    z-index: 100;
+    transition: left .8s ease-out;
+}
+
+
+
+/*---------------------------------------------------------------------*/
+/* HEADER (navigation bar) styling*/
+
+header{
+    position: fixed;
+    left: 0;
+    top:0;
+    height: 6%;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+    animation: dropHeader 2.5s 1;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+
+header label{
+    padding: 0 10% 0 10%;
+    text-align: center;  
+    color: white;
+    text-decoration: none;
+    font-size: 1.5625em;
+    opacity: .5;
+}
+
+header label:hover{
+    opacity: 1;
+    cursor: pointer;
+    animation-name: lettersHead;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
+/*---------------------------------------------------------------------*/
+/*HOMEPAGE styling*/
+
+.HomeSweetHome{
+    font-family: 'Amatic SC', cursive;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#choose2{
+    width: 80%;
+    margin-top: -5%;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+#choose2 td{
+    text-align: center;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.linkPhoto{
+    width: 250px;
+    height: auto;
+}
+
+#choose2 label{
+    color: white;
+    text-decoration: none;
+    font-size: 2.5em;
+    font-weight: 100;
+}
+
+#choose2 label:hover{
+    cursor: pointer;
+    animation-name: letters;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+/*---------------------------------------------------------------------*/
+/*TABLE PAGE styling*/
+
+.TakeMyMoney{
+    font-family: 'Amatic SC', cursive;
+    padding-left: 7.5%;
+    position: absolute;
+    text-align: center;
+    width:85%;    
+}
+
+#sellingList{
+    table-layout: fixed;
+    margin: 10% auto 0 auto;
+    width: 85%;
+    max-height: 90%;
+    text-align: center;
+}
+
+#sellingList col{
+    width: 20%;
+    span: 5;
+}
+
+#sellingList th{
+    background-color:rgba(10, 10, 10,.9);
+    font-size: 1.9em;
+    height: 5em;
+}
+
+#mainTbody tr{
+    height: 3em;
+    font-size: 1.2em;
+}
+
+#sellingList tr:nth-child(odd){
+    background-color:rgba(53, 53, 53,.6);
+}
+
+#sellingList tr:hover{
+    background-color: rgba(73, 73, 73,1);
+}
+
+.byKeyboard{
+    font-family: 'Amatic SC', cursive;
+    width: 17%;
+    text-align: center;
+    height: 3em;
+    font-size: 1.5em;
+    font-weight: 900;
+    font-weight: 500;
+    color: rgb(23, 106, 239);
+    background-color:rgba(23, 106, 239,.07);
+    border: .5px solid rgba(10, 10, 10,.2);
+}
+
+::-webkit-inner-spin-button { 
+    display: none;
+}
+
+.buttons{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em;
+    color: white;
+    margin-top: 3%;  
+    height: 10%;
+    width: 30%;
+    background-color:rgba(23, 106, 239,.07);
+    border: .5px solid rgba(10, 10, 10,.2);
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.buttons:hover{
+    cursor: pointer;
+    animation-name: lettersButtons;
+    animation-duration: .4s;
+    animation-iteration-count: infinite;
+}
+
+
+/*---------------------------------------------------------------------*/
+/*LAB SESSIONS MENU styling*/
+
+.LabSessions{
+    position: absolute;
+    width: 90%;
+    padding-left: 5%;
+}
+
+.accordion{
+    
+    width: inherit;
+    position: absolute;
+    padding: 0;
+}
+
+.LabSessions .Title{
+    font-family: 'Amatic SC', cursive;
+    font-size: 3em;
+    font-weight: 900;
+    cursor: pointer;
+    height: 15%;
+    width: 100%;
+    background-color:rgba(23, 106, 239,.3); 
+    border-bottom: 2px solid rgba(23, 106, 239,.8);
+    display:block;
+    position: relative;
+    transition: all .4s ease-out;
+}
+
+.LabSessions .Title:hover{
+    cursor: pointer;
+    animation-name: pulse;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+}
+
+ul, ol{
+    list-style-type: none;
+}
+
+.Content{
+    counter-reset: list;
+    background-color:rgba(23, 106, 239,.15);
+    text-align: left;
+    display: none;
+}
+
+.Content p {
+    text-indent: 6%;
+    padding-left: 3%;
+}
+
+.Content li {
+    margin-right: 4%;
+    padding-top: 10px;
+    list-style: none;
+    margin-bottom: 10px;
+    position: relative;
+    color: white;
+}
+
+.Content li::before {
+  counter-increment: list;
+  content: counter(list) '.';
+  padding-left :0;
+  font-size: 120%;
+  font-weight: bold;
+
+  border-radius: 3px;
+}
+
+#tableS1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#protocolTable th{
+    font-size: 1.5em;
+    border: 1px solid grey;
+}
+
+#protocolTable td{
+    text-align: center;
+    border: 1px solid grey;
+    width: 10%;
+    height: 5%;
+    font-size: 1em;
+}
+
+.Content ul li{
+    counter-reset: none;
+    list-style-type: none;
+}
+
+strong{
+    font-size: 120%;
+}
+
+
+
+
+/*---------------------------------------------------------------------*/
+/*LAB 1  styling*/
+
+
+
+
+
+
