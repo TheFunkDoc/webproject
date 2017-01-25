@@ -1,0 +1,45 @@
+	1.
+1. By telling that a method is <em>idempotent</em>, we mean that the method can be called multiple times without changing the result of the specific process. For example, the <code>HTTP GET</code> method can read multiple times, giving the same result, therefore it is an <em>idempotent</em> method.
+
+2. Because the idempodent requests give the same result multiple times, they are a great help in caching, because if the content of the request wasn't changed in the host server in the time between the last and the current request, the content doesn't has to be requested again from the host, instead it can be retrieved directly from cache, eliminating useless bandwith cost and reducing the time needed to complete the request.
+
+3,4. "Visitor counters" or "web counters", as the names states, count the number of times an webpage has been requested. In order for them to properly work, the request has to be made to the server, therefore breaking the assumption that the <code>HTTP GET</code> is <em>idempotent</em>.
+
+
+	2. 
+What makes the protocol stateless is that the server <em>is not required</em> to track state over multiple requests, not that it cannot do so if it wants to. For HTTP, this can be a major plus, because there is no need to allocate resources to store conversations in progress. On the other hand, from a security point of view, this can be a significant liability.
+
+	
+	
+	3.
+With the usage of <code>cookies</code>, the shopping basket's content doesn't have to be stored on the host side, therefore reducing substantially the storage needed to sustain an online shop.
+
+	
+	4.
+ The HTTP response status code 303 See Other is a way to redirect web applications to a new URI, particularly after a HTTP POST has been performed, since RFC 2616. source: https://en.wikipedia.org/wiki/HTTP_303
+
+
+	5.
+ENDPOINT: 
+	Spotify: https://api.spotify.com/v1/albums/{id}
+	Twitter: statuses/user_timeline
+
+HTTP METHOD:
+	Spotify: GET
+	Twitter: GET
+
+RESPONSE FORMAT:
+	Spotify: HTTP status code, object in JSON format
+	Twitter: HTTP status code, JSON
+HTTP RESPONSE CODES:
+	Spotify: 200: OK,  500: Internal Server Error, 404: Not found
+	Twitter: 200: OK,  500: Internal Server Error, 404: Not found
+
+
+	6.
+Besides <code>HEAD</code> method,<code> GET, POST, OPTIONS, PUT, DELETE</code> methods are allowed. Because of the wildcard ("*"), the request can be made from any <code>origin</code>.
+
+	7.
+<code>HEAD</code> asks for the response identical to the one that would correspond to a <code>GET</code> request, but without the response body, but the <code>content-type</code> does not appear in the <code>HEAD</code> request. We suppose that is due a bug. :-?  As said on ex 5, the response recieved after a <code>GET</code> request is an object in JSON format.
+
+	8.
